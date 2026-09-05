@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjuna Lounge — Goan-Indian Kitchen &amp; Bar, Stirchley, Birmingham</title>
+<meta name="description" content="Anjuna Lounge: Goa-inspired Indian street food, cocktails and a garden made for lingering, on Hazelwell St, Stirchley, Birmingham. Vegetarian &amp; vegan friendly, dog-friendly garden.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23E8A33D'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23B8481F' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#152238;
+    --ink-soft:#2b3a56;
+    --sand:#F4EAD3;
+    --sand-deep:#e9dbb8;
+    --marigold:#E8A33D;
+    --marigold-light:#f2c168;
+    --paprika:#B8481F;
+    --palm:#33503f;
+    --palm-deep:#213629;
+    --paper:#FBF5E6;
+    --white:#FFFBF2;
+    --max:1120px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  @media (prefers-reduced-motion:no-preference){
+    html{ scroll-behavior:smooth; }
+  }
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:700;
+    margin:0 0 .4em;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  p{ margin:0 0 1em; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--marigold); color:var(--ink);
+    padding:10px 16px; z-index:200; font-weight:600; border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{ left:0; }
+  :focus-visible{ outline:3px solid var(--paprika); outline-offset:3px; }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:100;
+    background:rgba(251,245,230,0.7);
+    backdrop-filter: blur(10px) saturate(1.2);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    border-bottom:1px solid rgba(21,34,56,0.08);
+    transition:background .3s ease, box-shadow .3s ease;
+  }
+  header.site.scrolled{
+    box-shadow:0 6px 24px rgba(21,34,56,0.08);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+  }
+  .wordmark{
+    font-family:var(--serif); font-weight:700; font-size:1.28rem;
+    text-decoration:none; color:var(--ink); display:flex; align-items:center; gap:10px;
+    white-space:nowrap;
+  }
+  .wordmark .dot{
+    width:11px;height:11px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--marigold-light), var(--paprika) 75%);
+    flex:none;
+  }
+  nav.links{ display:flex; align-items:center; gap:28px; }
+  nav.links a{
+    text-decoration:none; font-size:.98rem; font-weight:500; color:var(--ink-soft);
+    position:relative; padding:4px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+    background:var(--paprika); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.links a:hover::after, nav.links a:focus-visible::after{ transform:scaleX(1); }
+  .nav-call{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink); color:var(--white); text-decoration:none;
+    padding:10px 18px; border-radius:30px; font-weight:600; font-size:.92rem;
+    transition:transform .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .nav-call:hover{ background:var(--paprika); transform:translateY(-1px); }
+  .nav-toggle{ display:none; }
+
+  @media (max-width: 860px){
+    nav.links{ display:none; }
+    .nav-toggle{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:50%; border:1px solid rgba(21,34,56,.15);
+      background:none; cursor:pointer;
+    }
+    .nav{ gap:12px; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 45%, var(--palm-deep) 100%);
+    color:var(--white);
+  }
+  .hero-inner{
+    position:relative; z-index:3;
+    display:grid; grid-template-columns: 1.1fr 0.9fr; align-items:center; gap:40px;
+    padding:88px 28px 64px;
+    max-width:var(--max); margin:0 auto;
+    min-height:560px;
+  }
+  .hero-scene{
+    position:absolute; inset:0; z-index:1; opacity:.92;
+  }
+  .hero-scene .sun{
+    transform-origin:center;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero-scene .sun-glow{ animation: breathe 6s ease-in-out infinite; transform-origin:600px 190px; }
+    .hero-scene .wave-a{ animation: driftA 22s ease-in-out infinite alternate; }
+    .hero-scene .wave-b{ animation: driftB 17s ease-in-out infinite alternate; }
+    .hero-scene .wave-c{ animation: driftC 26s ease-in-out infinite alternate; }
+    .hero-scene .frond{ animation: sway 7s ease-in-out infinite alternate; transform-origin:60px 620px; }
+    .hero-scene .frond2{ animation-delay:-2s; }
+    .hero-scene .frond3{ animation-delay:-4.5s; }
+  }
+  @keyframes breathe{ 0%,100%{ transform:scale(1); opacity:.55;} 50%{ transform:scale(1.12); opacity:.8;} }
+  @keyframes driftA{ from{ transform:translateX(-14px);} to{ transform:translateX(14px);} }
+  @keyframes driftB{ from{ transform:translateX(10px);} to{ transform:translateX(-16px);} }
+  @keyframes driftC{ from{ transform:translateX(-8px);} to{ transform:translateX(10px);} }
+  @keyframes sway{ from{ transform:rotate(-3deg);} to{ transform:rotate(3deg);} }
+
+  .hero-text{ position:relative; }
+  .hero-text h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    color:var(--white);
+    margin-bottom:.28em;
+  }
+  .hero-text .tagline{
+    font-size:clamp(1.05rem, 2vw, 1.28rem);
+    max-width:34ch;
+    color:var(--sand);
+    margin-bottom:1.6em;
+  }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 24px; border-radius:34px; text-decoration:none;
+    font-weight:600; font-size:.98rem; transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{ background:var(--marigold); color:var(--ink); }
+  .btn-primary:hover{ background:var(--marigold-light); transform:translateY(-2px); box-shadow:0 10px 24px rgba(232,163,61,.35); }
+  .btn-ghost{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.4); }
+  .btn-ghost:hover{ background:rgba(255,255,255,.12); transform:translateY(-2px); }
+  .btn svg{ width:18px; height:18px; flex:none; }
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero-anim > *{ opacity:0; animation: riseIn .8s cubic-bezier(.2,.7,.3,1) forwards; }
+    .hero-anim > *:nth-child(1){ animation-delay:.05s; }
+    .hero-anim > *:nth-child(2){ animation-delay:.2s; }
+    .hero-anim > *:nth-child(3){ animation-delay:.38s; }
+  }
+  @keyframes riseIn{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
+
+  .hero-meta{
+    position:relative; z-index:3;
+    display:flex; gap:26px; flex-wrap:wrap;
+    padding:0 28px 40px; max-width:var(--max); margin:0 auto;
+    color:var(--sand); font-size:.92rem;
+  }
+  .hero-meta span{ display:flex; align-items:center; gap:8px; }
+  .hero-meta svg{ width:16px; height:16px; opacity:.85; flex:none; }
+  .status-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:6px 14px; border-radius:20px; font-weight:600; font-size:.85rem;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25);
+  }
+  .status-dot{ width:8px; height:8px; border-radius:50%; background:#8fd19e; flex:none; }
+  .status-dot.closed{ background:#e08a6b; }
+
+  @media (max-width: 760px){
+    .hero-inner{ grid-template-columns:1fr; padding-top:56px; min-height:auto; }
+    .hero-inner .hero-visual{ display:none; }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:96px 0; }
+  .section-head{ max-width:640px; margin-bottom:44px; }
+  .section-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); }
+  .section-head p{ font-size:1.08rem; color:var(--ink-soft); }
+
+  .story{ background:var(--paper); }
+  .story .wrap{ display:grid; grid-template-columns: 1fr 1fr; gap:64px; align-items:center; }
+  .story-copy p{ font-size:1.06rem; color:var(--ink-soft); }
+  .story-copy p:first-of-type{ color:var(--ink); font-size:1.15rem; }
+  .story-art{ position:relative; }
+  .story-art svg{ width:100%; height:auto; }
+  @media (max-width: 860px){
+    .story .wrap{ grid-template-columns:1fr; gap:36px; }
+    .story-art{ order:-1; max-width:340px; margin:0 auto; }
+  }
+
+  /* bunting divider */
+  .bunting-wrap{ overflow:hidden; padding:6px 0 26px; background:var(--paper); }
+  .bunting{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    border-top:2px dashed rgba(21,34,56,.35);
+    max-width:var(--max); margin:0 auto; padding:0 28px;
+    transform-origin:top center;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .bunting{ animation: buntingSway 5.5s ease-in-out infinite alternate; }
+  }
+  @keyframes buntingSway{ from{ transform:rotate(-.6deg);} to{ transform:rotate(.6deg);} }
+  .bunting span{
+    width:0; height:0; margin-top:-2px;
+    border-left:9px solid transparent; border-right:9px solid transparent;
+    border-top:15px solid var(--flag, var(--paprika));
+  }
+  .bunting span:nth-child(3n+1){ --flag: var(--paprika); }
+  .bunting span:nth-child(3n+2){ --flag: var(--marigold); }
+  .bunting span:nth-child(3n){ --flag: var(--palm); }
+
+  /* food & drink */
+  .fare{ background:var(--ink); color:var(--white); position:relative; overflow:hidden; }
+  .fare::before{
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(circle at 85% 15%, rgba(232,163,61,.18), transparent 55%);
+    pointer-events:none;
+  }
+  .fare .section-head p{ color:var(--sand); }
+  .fare .section-head h2{ color:var(--white); }
+  .fare-grid{ display:grid; grid-template-columns: 1.05fr .95fr; gap:56px; position:relative; z-index:1; }
+  .fare-copy p{ color:var(--sand); font-size:1.05rem; }
+  .tag-list{ display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+  .tag{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 16px; border-radius:24px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);
+    font-size:.92rem; font-weight:500;
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .tag:hover{ background:rgba(232,163,61,.16); border-color:rgba(232,163,61,.5); transform:translateY(-2px); }
+  .tag svg{ width:16px; height:16px; color:var(--marigold); flex:none; }
+  @media (max-width: 860px){ .fare-grid{ grid-template-columns:1fr; gap:32px; } }
+
+  /* hours + map */
+  .visit{ background:var(--sand); }
+  .visit-grid{ display:grid; grid-template-columns: .95fr 1.05fr; gap:56px; align-items:start; }
+  .hours-card, .contact-card{
+    background:var(--white); border-radius:18px; padding:28px 30px;
+    box-shadow:0 14px 40px rgba(21,34,56,.08);
+  }
+  .hours-card + .contact-card{ margin-top:24px; }
+  .hours-card h3, .contact-card h3{ font-size:1.2rem; margin-bottom:.6em; }
+  table.hours{ width:100%; border-collapse:collapse; }
+  table.hours td{ padding:9px 0; font-size:.98rem; border-top:1px solid rgba(21,34,56,.08); }
+  table.hours tr:first-child td{ border-top:none; }
+  table.hours td:last-child{ text-align:right; color:var(--ink-soft); }
+  table.hours tr.today td{ font-weight:700; color:var(--paprika); }
+  .status-line{
+    margin-top:16px; padding-top:14px; border-top:1px dashed rgba(21,34,56,.18);
+    display:flex; align-items:center; gap:10px; font-weight:600; font-size:.95rem;
+  }
+  .contact-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .contact-list li{ display:flex; gap:12px; align-items:flex-start; font-size:.98rem; }
+  .contact-list svg{ width:20px; height:20px; flex:none; color:var(--paprika); margin-top:2px; }
+  .contact-list a{ text-decoration:none; font-weight:600; }
+  .contact-list a:hover{ text-decoration:underline; }
+  .map-frame{
+    border-radius:18px; overflow:hidden; box-shadow:0 14px 40px rgba(21,34,56,.1);
+    border:1px solid rgba(21,34,56,.08); height:100%; min-height:420px;
+  }
+  .map-frame iframe{ width:100%; height:100%; min-height:420px; border:0; display:block; }
+  @media (max-width: 900px){
+    .visit-grid{ grid-template-columns:1fr; }
+    .map-frame{ min-height:320px; }
+    .map-frame iframe{ min-height:320px; }
+  }
+
+  /* ratings */
+  .ratings{ background:var(--paper); }
+  .ratings .wrap{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px; text-align:center;
+  }
+  .rating-block{ padding:28px 16px; border-radius:16px; background:var(--white); border:1px solid rgba(21,34,56,.06); }
+  .rating-block .stars{ color:var(--marigold); font-size:1.3rem; letter-spacing:2px; margin-bottom:6px; }
+  .rating-block .score{ font-family:var(--serif); font-size:2rem; font-weight:700; }
+  .rating-block .source{ color:var(--ink-soft); font-size:.92rem; margin-top:4px; }
+  @media (max-width:700px){ .ratings .wrap{ grid-template-columns:1fr; } }
+
+  /* footer */
+  footer{
+    background:var(--palm-deep); color:var(--sand);
+    padding:64px 0 32px;
+  }
+  .footer-grid{ display:grid; grid-template-columns: 1.2fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  footer h4{ font-family:var(--serif); color:var(--white); font-size:1.1rem; margin-bottom:.7em; }
+  footer .wordmark-f{ font-family:var(--serif); font-size:1.4rem; color:var(--white); margin-bottom:10px; }
+  footer p{ color:rgba(244,234,211,.85); font-size:.95rem; }
+  footer ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  footer a{ color:rgba(244,234,211,.9); text-decoration:none; font-size:.95rem; }
+  footer a:hover{ color:var(--marigold-light); }
+  .social-row{ display:flex; gap:14px; margin-top:14px; }
+  .social-row a{
+    width:38px; height:38px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .social-row a:hover{ background:var(--marigold); transform:translateY(-2px); }
+  .social-row svg{ width:18px; height:18px; }
+  .foot-bottom{
+    border-top:1px solid rgba(244,234,211,.14); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:.85rem; color:rgba(244,234,211,.6);
+  }
+  @media (max-width: 760px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width: 520px){ .footer-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ICONS -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 4h3l1.5 4-2 1.3a12 12 0 0 0 5.7 5.7L15 13l4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c8 0 14-5 16-16C11 5 5 11 4 20Z"/><path d="M4 20c3-4 6-7 12-11"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><circle cx="16.6" cy="7.4" r="1"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8.5h2V5.2h-2c-2 0-3.4 1.4-3.4 3.5v2H8.7v3H10.6V20h3v-6.3h2.1l.5-3h-2.6v-1.6c0-.7.3-.6.8-.6Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></symbol>
+</svg>
+
+<header class="site" id="siteHeader">
+  <div class="nav wrap" style="padding-left:0;padding-right:0;">
+    <a href="#top" class="wordmark"><span class="dot"></span>Anjuna Lounge</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#story">Story</a>
+      <a href="#fare">Food &amp; drink</a>
+      <a href="#visit">Hours</a>
+      <a href="#find">Find us</a>
+    </nav>
+    <a class="nav-call" href="tel:+447526316811">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-phone"/></svg>
+      Call now
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <svg class="hero-scene" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="sunGrad" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#fbe2a6"/>
+          <stop offset="45%" stop-color="var(--marigold)"/>
+          <stop offset="100%" stop-color="var(--paprika)"/>
+        </radialGradient>
+        <path id="frondBlade" d="M0,0 C-16,-84 -8,-168 0,-238 C8,-168 16,-84 0,0 Z"/>
+      </defs>
+
+      <circle class="sun-glow" cx="700" cy="180" r="150" fill="var(--marigold)" opacity=".4" style="filter:blur(18px)"/>
+      <circle class="sun" cx="700" cy="180" r="92" fill="url(#sunGrad)"/>
+
+      <g class="wave-a">
+        <path d="M0,400 C160,378 340,422 500,400 C660,378 840,422 1000,402 L1000,640 L0,640 Z" fill="var(--paprika)" opacity=".5"/>
+      </g>
+      <g class="wave-b">
+        <path d="M0,452 C220,428 420,470 620,450 C790,433 900,462 1000,450 L1000,640 L0,640 Z" fill="var(--palm)" opacity=".55"/>
+      </g>
+      <g class="wave-c">
+        <path d="M0,505 C240,488 460,522 660,505 C810,492 910,512 1000,504 L1000,640 L0,640 Z" fill="var(--ink)" opacity=".92"/>
+      </g>
+
+      <g class="frond frond1" fill="var(--ink)" transform="translate(0,0)">
+        <use href="#frondBlade" transform="translate(55,620) rotate(-46)"/>
+        <use href="#frondBlade" transform="translate(55,620) rotate(-18)"/>
+        <use href="#frondBlade" transform="translate(55,620) rotate(8)"/>
+        <use href="#frondBlade" transform="translate(55,620) rotate(34)"/>
+        <use href="#frondBlade" transform="translate(55,620) rotate(60)"/>
+      </g>
+      <g class="frond frond2" fill="var(--palm-deep)" opacity=".85">
+        <use href="#frondBlade" transform="translate(120,640) scale(0.7) rotate(-30)"/>
+        <use href="#frondBlade" transform="translate(120,640) scale(0.7) rotate(0)"/>
+        <use href="#frondBlade" transform="translate(120,640) scale(0.7) rotate(30)"/>
+      </g>
+      <g class="frond frond3" fill="var(--ink)" opacity=".9" transform="translate(880,0)">
+        <use href="#frondBlade" transform="translate(60,660) scale(0.85) rotate(150)"/>
+        <use href="#frondBlade" transform="translate(60,660) scale(0.85) rotate(178)"/>
+        <use href="#frondBlade" transform="translate(60,660) scale(0.85) rotate(206)"/>
+        <use href="#frondBlade" transform="translate(60,660) scale(0.85) rotate(234)"/>
+      </g>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="hero-text hero-anim">
+        <h1>Anjuna Lounge</h1>
+        <p class="tagline">Goa-inspired Indian street food, cocktails and a garden made for lingering — on Stirchley high street.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="tel:+447526316811">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#i-phone"/></svg>
+            Call +44 7526 316811
+          </a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Anjuna+Lounge+58-60+Hazelwell+St+Stirchley+Birmingham+B30+2JS" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#i-pin"/></svg>
+            Get directions
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-meta">
+      <span id="statusPill" class="status-pill"><span class="status-dot" id="statusDot"></span><span id="statusText">Checking today's hours…</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#i-pin"/></svg>58–60 Hazelwell St, Stirchley, Birmingham B30 2JS, UK</span>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="story-copy">
+        <div class="section-head" style="margin-bottom:20px;">
+          <h2>Named for a sunset in Goa</h2>
+        </div>
+        <p>Anjuna is a stretch of Goan coast known for its flea markets and long, unhurried evenings — the kind of place where nobody's in a rush to be anywhere else. That's the mood we've brought to Hazelwell Street.</p>
+        <p>A few minutes from Bournville station, Anjuna Lounge serves proudly vegetarian- and vegan-friendly Indian street food alongside a full bar of cocktails, beer and spirits, in a room that feels more like a beach shack than a restaurant.</p>
+        <p>Out back there's a bright, dog-friendly garden for the warmer months — bring the whole crew, four legs included.</p>
+      </div>
+      <div class="story-art" aria-hidden="true">
+        <svg viewBox="0 0 420 420">
+          <defs>
+            <radialGradient id="storySun" cx="50%" cy="42%" r="60%">
+              <stop offset="0%" stop-color="#fbe2a6"/>
+              <stop offset="55%" stop-color="var(--marigold)"/>
+              <stop offset="100%" stop-color="var(--paprika)"/>
+            </radialGradient>
+          </defs>
+          <circle cx="210" cy="180" r="200" fill="var(--sand-deep)"/>
+          <circle cx="210" cy="165" r="86" fill="url(#storySun)"/>
+          <path d="M0,300 C90,278 150,310 210,296 C280,280 340,312 420,296 L420,420 L0,420 Z" fill="var(--palm)"/>
+          <path d="M0,335 C100,318 160,344 210,332 C290,314 350,340 420,330 L420,420 L0,420 Z" fill="var(--palm-deep)"/>
+          <g fill="var(--ink)" opacity=".92">
+            <use href="#frondBlade" transform="translate(60,410) rotate(-40) scale(0.55)"/>
+            <use href="#frondBlade" transform="translate(60,410) rotate(-10) scale(0.55)"/>
+            <use href="#frondBlade" transform="translate(60,410) rotate(20) scale(0.55)"/>
+            <use href="#frondBlade" transform="translate(60,410) rotate(50) scale(0.55)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="bunting-wrap" aria-hidden="true">
+    <div class="bunting">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- FOOD & DRINK -->
+  <section class="fare" id="fare">
+    <div class="wrap fare-grid">
+      <div>
+        <div class="section-head">
+          <h2>Small plates, proper spice</h2>
+          <p>Street-food-style dishes built for sharing, done properly — not watered down for anyone.</p>
+        </div>
+        <div class="fare-copy">
+          <p>Expect small plates meant to pile up in the middle of the table, a genuinely generous vegan and vegetarian range, and a bar that doesn't treat cocktails as an afterthought. Whether you're in for a quick bite before the train or settling in for the evening, the pace here is the same: slow down.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tag-list">
+          <span class="tag"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Vegetarian &amp; vegan friendly</span>
+          <span class="tag"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Indian street food, small plates</span>
+          <span class="tag"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Cocktails, beer &amp; spirits</span>
+          <span class="tag"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Dog-friendly garden</span>
+          <span class="tag"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg>Eat in, takeaway &amp; delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + MAP -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Find your evening</h2>
+        <p>Open Thursday to Sunday. Walk-ins welcome, though a call ahead is never a bad idea on weekends.</p>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <div class="hours-card">
+            <h3>Opening hours</h3>
+            <table class="hours" id="hoursTable"></table>
+            <div class="status-line">
+              <span class="status-dot" id="statusDot2"></span>
+              <span id="statusText2">Checking today's hours…</span>
+            </div>
+          </div>
+          <div class="contact-card" id="find">
+            <h3>Get in touch</h3>
+            <ul class="contact-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg><span>58–60 Hazelwell St, Stirchley,<br>Birmingham B30 2JS, UK</span></li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg><a href="tel:+447526316811">+44 7526 316811</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Map showing Anjuna Lounge on Hazelwell St, Stirchley, Birmingham"
+            src="https://www.google.com/maps?q=58-60+Hazelwell+St,+Stirchley,+Birmingham+B30+2JS,+UK&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATINGS -->
+  <section class="ratings">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:32px;">
+        <h2 style="font-size:1.6rem;">Loved locally</h2>
+      </div>
+      <div class="wrap" style="padding:0;">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;" class="ratings-row">
+          <div class="rating-block"><div class="stars">★★★★★</div><div class="score">4.8</div><div class="source">Google reviews</div></div>
+          <div class="rating-block"><div class="stars">★★★★★</div><div class="score">4.7</div><div class="source">Tripadvisor</div></div>
+          <div class="rating-block"><div class="stars">★★★★★</div><div class="score">4.9</div><div class="source">Facebook</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark-f">Anjuna Lounge</div>
+        <p>Goan-Indian street food and cocktails on Stirchley high street, Birmingham.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/anjunalounge/" target="_blank" rel="noopener" aria-label="Anjuna Lounge on Instagram"><svg viewBox="0 0 24 24"><use href="#i-insta"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Anjuna Lounge on Facebook"><svg viewBox="0 0 24 24"><use href="#i-fb"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>58–60 Hazelwell St</li>
+          <li>Stirchley, Birmingham</li>
+          <li>B30 2JS, UK</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447526316811">+44 7526 316811</a></li>
+          <li><a href="#visit">Opening hours</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Anjuna+Lounge+58-60+Hazelwell+St+Stirchley+Birmingham+B30+2JS" target="_blank" rel="noopener">Get directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Anjuna Lounge</span>
+      <span>Stirchley, Birmingham</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky header shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive:true });
+
+  // Opening hours data: 0=Sunday ... 6=Saturday
+  const hours = [
+    { day:0, label:'Sunday',    open:13, close:21 },
+    { day:1, label:'Monday',    closed:true },
+    { day:2, label:'Tuesday',   closed:true },
+    { day:3, label:'Wednesday', closed:true },
+    { day:4, label:'Thursday',  open:17, close:23 },
+    { day:5, label:'Friday',    open:17, close:23 },
+    { day:6, label:'Saturday',  open:13, close:23 },
+  ];
+
+  function fmt(h){
+    const period = h >= 12 ? 'pm' : 'am';
+    let h12 = h % 12;
+    if (h12 === 0) h12 = 12;
+    return h12 + period;
+  }
+
+  // Get the current day/time in the UK specifically (Europe/London),
+  // regardless of the visitor's own device timezone.
+  function getUKNow(){
+    const parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      weekday: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    }).formatToParts(new Date());
+    const map = {};
+    parts.forEach(p => map[p.type] = p.value);
+    const weekdayIdx = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+    return {
+      dayIdx: weekdayIdx[map.weekday],
+      hourDecimal: parseInt(map.hour, 10) + parseInt(map.minute, 10) / 60
+    };
+  }
+
+  // Render table
+  const tbl = document.getElementById('hoursTable');
+  const uk = getUKNow();
+  const todayIdx = uk.dayIdx;
+  hours.forEach(row => {
+    const tr = document.createElement('tr');
+    if (row.day === todayIdx) tr.classList.add('today');
+    const tdDay = document.createElement('td');
+    tdDay.textContent = row.label;
+    const tdTime = document.createElement('td');
+    tdTime.textContent = row.closed ? 'Closed' : `${fmt(row.open)} – ${fmt(row.close)}`;
+    tr.appendChild(tdDay); tr.appendChild(tdTime);
+    tbl.appendChild(tr);
+  });
+
+  // Compute live status
+  function computeStatus(){
+    const today = hours.find(h => h.day === todayIdx);
+    const nowHour = uk.hourDecimal;
+    let openNow = false;
+    if (today && !today.closed && nowHour >= today.open && nowHour < today.close) {
+      openNow = true;
+    }
+    let text;
+    if (openNow) {
+      text = `Open now · closes ${fmt(today.close)} UK time`;
+    } else {
+      // find next open day (including today if before opening)
+      for (let i = 0; i < 8; i++){
+        const idx = (todayIdx + i) % 7;
+        const candidate = hours.find(h => h.day === idx);
+        if (!candidate.closed) {
+          if (i === 0 && nowHour < candidate.open) {
+            text = `Closed now · opens today at ${fmt(candidate.open)} UK time`;
+            break;
+          } else if (i > 0) {
+            text = `Closed now · opens ${candidate.label} at ${fmt(candidate.open)} UK time`;
+            break;
+          }
+        }
+      }
+      if (!text) text = 'Closed now';
+    }
+    return { openNow, text };
+  }
+
+  const status = computeStatus();
+  ['statusText','statusText2'].forEach(id => document.getElementById(id).textContent = status.text);
+  ['statusDot','statusDot2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!status.openNow) el.classList.add('closed');
+  });
+</script>
+
+</body>
+</html>
